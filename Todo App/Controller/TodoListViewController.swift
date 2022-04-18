@@ -8,7 +8,7 @@
 import UIKit
 import RealmSwift
 
-class TodoListViewController: UITableViewController{
+class TodoListViewController: SwipeTableViewController{
     
     
     @IBOutlet weak var categoryName: UINavigationItem!
@@ -35,7 +35,9 @@ class TodoListViewController: UITableViewController{
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: .default, reuseIdentifier: "TodoItemCell")
+        
+        let cell = super.tableView(tableView, cellForRowAt: indexPath)
+        
         if let item = todoItems?[indexPath.row]{
             cell.textLabel?.text = item.title
             
@@ -43,10 +45,6 @@ class TodoListViewController: UITableViewController{
         }else{
             cell.textLabel?.text = "No se agregaron Items"
         }
-        
-        
-        
-        
         return cell
     }
     
@@ -108,11 +106,23 @@ class TodoListViewController: UITableViewController{
     
     func loadItems(){
         
-        categoryName.title = selectedCategory?.name
+        categoryName.title = selectedCategory?.name.capitalized
         
         todoItems = selectedCategory?.items.sorted(byKeyPath: "title", ascending: true)
         
         tableView.reloadData()
+    }
+    
+    override func updateModel(at indexPath: IndexPath) {
+        if let itemSelectedToDelete = self.todoItems?[indexPath.row]{
+            do{
+                try self.realm.write {
+                    self.realm.delete(itemSelectedToDelete)
+                }
+            }catch{
+                print("Error deleting")
+            }
+        }
     }
 }
 
