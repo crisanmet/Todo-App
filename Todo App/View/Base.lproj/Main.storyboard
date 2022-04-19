@@ -87,6 +87,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="categoryName" destination="1wi-ra-pDq" id="Drz-gD-O19"/>
+                        <outlet property="searchBar" destination="snq-Sp-BgW" id="nRP-hq-R7M"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5uX-Hr-Kbz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -98,8 +99,8 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="iGZ-oH-tMc" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="hjw-Ll-ZRj">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="hjw-Ll-ZRj">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" systemColor="systemMintColor"/>
                         <color key="barTintColor" systemColor="systemMintColor"/>

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D88EE052F2172634C36AA37 /* Pods_Todo_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 949B709DA1611D57FA4EFB3C /* Pods_Todo_App.framework */; };
 		F6019EED2807BAA7007EA694 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6019EEC2807BAA7007EA694 /* AppDelegate.swift */; };
 		F6019EEF2807BAA7007EA694 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6019EEE2807BAA7007EA694 /* SceneDelegate.swift */; };
 		F6019EF12807BAA7007EA694 /* TodoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6019EF02807BAA7007EA694 /* TodoListViewController.swift */; };
@@ -23,6 +24,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5009B66285D7194F37D5F7C4 /* Pods-Todo App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Todo App.debug.xcconfig"; path = "Target Support Files/Pods-Todo App/Pods-Todo App.debug.xcconfig"; sourceTree = "<group>"; };
+		949B709DA1611D57FA4EFB3C /* Pods_Todo_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Todo_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EBCAA3B7182899B0A4292C26 /* Pods-Todo App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Todo App.release.xcconfig"; path = "Target Support Files/Pods-Todo App/Pods-Todo App.release.xcconfig"; sourceTree = "<group>"; };
 		F6019EE92807BAA7007EA694 /* Todo App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Todo App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6019EEC2807BAA7007EA694 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F6019EEE2807BAA7007EA694 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -45,17 +49,38 @@
 				F6297023280BB8E000B13E0B /* RealmSwift in Frameworks */,
 				F6F3CA9C280D032A0022042A /* SwipeCellKit in Frameworks */,
 				F6297021280BB8E000B13E0B /* Realm in Frameworks */,
+				1D88EE052F2172634C36AA37 /* Pods_Todo_App.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		518C8A242E78150379FDEC61 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5009B66285D7194F37D5F7C4 /* Pods-Todo App.debug.xcconfig */,
+				EBCAA3B7182899B0A4292C26 /* Pods-Todo App.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		68BA29450EB92607804E0384 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				949B709DA1611D57FA4EFB3C /* Pods_Todo_App.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F6019EE02807BAA7007EA694 = {
 			isa = PBXGroup;
 			children = (
 				F6019EEB2807BAA7007EA694 /* Todo App */,
 				F6019EEA2807BAA7007EA694 /* Products */,
+				518C8A242E78150379FDEC61 /* Pods */,
+				68BA29450EB92607804E0384 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -124,9 +149,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F6019EFD2807BAAD007EA694 /* Build configuration list for PBXNativeTarget "Todo App" */;
 			buildPhases = (
+				2B8C75C878BF7952EBB77294 /* [CP] Check Pods Manifest.lock */,
 				F6019EE52807BAA7007EA694 /* Sources */,
 				F6019EE62807BAA7007EA694 /* Frameworks */,
 				F6019EE72807BAA7007EA694 /* Resources */,
+				F82580196682CBEEB075A799 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -167,8 +194,8 @@
 			);
 			mainGroup = F6019EE02807BAA7007EA694;
 			packageReferences = (
-				F629701F280BB8E000B13E0B /* XCRemoteSwiftPackageReference "realm-swift" */,
-				F6F3CA9A280D032A0022042A /* XCRemoteSwiftPackageReference "SwipeCellKit" */,
+				F629701F280BB8E000B13E0B /* XCRemoteSwiftPackageReference "realm-swift.git" */,
+				F6F3CA9A280D032A0022042A /* XCRemoteSwiftPackageReference "SwipeCellKit.git" */,
 			);
 			productRefGroup = F6019EEA2807BAA7007EA694 /* Products */;
 			projectDirPath = "";
@@ -191,6 +218,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2B8C75C878BF7952EBB77294 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Todo App-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F82580196682CBEEB075A799 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Todo App/Pods-Todo App-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Todo App/Pods-Todo App-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Todo App/Pods-Todo App-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F6019EE52807BAA7007EA694 /* Sources */ = {
@@ -345,6 +414,7 @@
 		};
 		F6019EFE2807BAAD007EA694 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5009B66285D7194F37D5F7C4 /* Pods-Todo App.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -373,6 +443,7 @@
 		};
 		F6019EFF2807BAAD007EA694 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EBCAA3B7182899B0A4292C26 /* Pods-Todo App.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -423,7 +494,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		F629701F280BB8E000B13E0B /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+		F629701F280BB8E000B13E0B /* XCRemoteSwiftPackageReference "realm-swift.git" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/realm/realm-swift.git";
 			requirement = {
@@ -431,7 +502,7 @@
 				kind = branch;
 			};
 		};
-		F6F3CA9A280D032A0022042A /* XCRemoteSwiftPackageReference "SwipeCellKit" */ = {
+		F6F3CA9A280D032A0022042A /* XCRemoteSwiftPackageReference "SwipeCellKit.git" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SwipeCellKit/SwipeCellKit.git";
 			requirement = {
@@ -444,17 +515,17 @@
 /* Begin XCSwiftPackageProductDependency section */
 		F6297020280BB8E000B13E0B /* Realm */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = F629701F280BB8E000B13E0B /* XCRemoteSwiftPackageReference "realm-swift" */;
+			package = F629701F280BB8E000B13E0B /* XCRemoteSwiftPackageReference "realm-swift.git" */;
 			productName = Realm;
 		};
 		F6297022280BB8E000B13E0B /* RealmSwift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = F629701F280BB8E000B13E0B /* XCRemoteSwiftPackageReference "realm-swift" */;
+			package = F629701F280BB8E000B13E0B /* XCRemoteSwiftPackageReference "realm-swift.git" */;
 			productName = RealmSwift;
 		};
 		F6F3CA9B280D032A0022042A /* SwipeCellKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = F6F3CA9A280D032A0022042A /* XCRemoteSwiftPackageReference "SwipeCellKit" */;
+			package = F6F3CA9A280D032A0022042A /* XCRemoteSwiftPackageReference "SwipeCellKit.git" */;
 			productName = SwipeCellKit;
 		};
 /* End XCSwiftPackageProductDependency section */
