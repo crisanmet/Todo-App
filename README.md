@@ -1,4 +1,9 @@
 # Todo-App
+El proyecto tiene dos ramas:
+
+1- CoreData
+2-Realm 
+
 
 ## Screenshots
 
